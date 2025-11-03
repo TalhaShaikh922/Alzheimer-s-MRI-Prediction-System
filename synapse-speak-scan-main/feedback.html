@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - AlzDetect AI</title>
+    <meta name="description" content="Share your valuable feedback to help improve our AI model for Alzheimer's detection.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon">
+                        <i data-lucide="brain"></i>
+                    </div>
+                    <span class="logo-text">AlzDetect AI</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="main.html" class="nav-link">Project</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="feedback.html" class="nav-link active">Feedback</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="menu-icon"></i>
+                    <i data-lucide="x" class="close-icon hidden"></i>
+                </button>
+            </div>
+
+            <div class="mobile-nav hidden" id="mobileNav">
+                <div class="mobile-nav-links">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="main.html" class="mobile-nav-link">Project</a>
+                    <a href="about.html" class="mobile-nav-link">About</a>
+                    <a href="feedback.html" class="mobile-nav-link active">Feedback</a>
+                    <a href="contact.html" class="mobile-nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="hero-icon-wrapper">
+                    <div class="hero-icon primary">
+                        <i data-lucide="message-square"></i>
+                    </div>
+                </div>
+                <h1 class="page-title">We Value Your Insights!</h1>
+                <p class="page-subtitle">
+                    Your feedback is crucial to improving our AI model and ensuring it meets 
+                    real-world healthcare needs. Share your thoughts and help shape the future 
+                    of Alzheimer's detection technology.
+                </p>
+            </div>
+        </section>
+
+        <!-- Success Message (Hidden by default) -->
+        <div id="successMessage" class="success-message hidden">
+            <div class="container">
+                <div class="success-card">
+                    <div class="success-content">
+                        <div class="success-icon">
+                            <i data-lucide="check-circle"></i>
+                        </div>
+                        <h1 class="success-title">Thank You!</h1>
+                        <p class="success-description">
+                            Your feedback has been successfully submitted. We appreciate your time 
+                            and insights in helping us improve our AI research.
+                        </p>
+                        <div class="success-footer">
+                            <i data-lucide="heart" class="heart-icon"></i>
+                            <span>Your input helps advance healthcare AI</span>
+                        </div>
+                        <button class="btn btn-outline" onclick="resetForm()">
+                            Submit Another Feedback
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feedback Form Section -->
+        <section id="feedbackSection" class="section bg-gradient">
+            <div class="container">
+                <div class="feedback-layout">
+                    <!-- Form -->
+                    <div class="form-column">
+                        <div class="form-card">
+                            <div class="card-header">
+                                <h2 class="card-title">Share Your Feedback</h2>
+                                <p class="card-description">
+                                    Help us improve our AI model with your valuable insights and suggestions.
+                                </p>
+                            </div>
+                            <div class="card-content">
+                                <form id="feedbackForm" onsubmit="submitFeedback(event)">
+                                    <!-- Personal Information -->
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="name" class="form-label">Name *</label>
+                                            <input 
+                                                type="text" 
+                                                id="name" 
+                                                name="name" 
+                                                class="form-input" 
+                                                placeholder="Your full name" 
+                                                required
+                                            >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email" class="form-label">Email *</label>
+                                            <input 
+                                                type="email" 
+                                                id="email" 
+                                                name="email" 
+                                                class="form-input" 
+                                                placeholder="your.email@example.com" 
+                                                required
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <!-- Feedback Category -->
+                                    <div class="form-group">
+                                        <label for="category" class="form-label">Feedback Category</label>
+                                        <select id="category" name="category" class="form-select">
+                                            <option value="">Select a category</option>
+                                            <option value="usability">User Experience</option>
+                                            <option value="accuracy">Model Accuracy</option>
+                                            <option value="features">Feature Requests</option>
+                                            <option value="technical">Technical Issues</option>
+                                            <option value="clinical">Clinical Relevance</option>
+                                            <option value="general">General Feedback</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Rating -->
+                                    <div class="form-group">
+                                        <label for="rating" class="form-label">Overall Rating</label>
+                                        <select id="rating" name="rating" class="form-select">
+                                            <option value="">Rate your experience</option>
+                                            <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                                            <option value="4">⭐⭐⭐⭐ Very Good</option>
+                                            <option value="3">⭐⭐⭐ Good</option>
+                                            <option value="2">⭐⭐ Fair</option>
+                                            <option value="1">⭐ Needs Improvement</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Message -->
+                                    <div class="form-group">
+                                        <label for="message" class="form-label">Your Feedback *</label>
+                                        <textarea 
+                                            id="message" 
+                                            name="message" 
+                                            class="form-textarea" 
+                                            placeholder="Please share your thoughts, suggestions, or any issues you encountered..."
+                                            required
+                                        ></textarea>
+                                    </div>
+
+                                    <!-- Submit Button -->
+                                    <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                                        <i data-lucide="send"></i>
+                                        Submit Feedback
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="sidebar-column">
+                        <!-- Why Feedback Matters -->
+                        <div class="sidebar-card">
+                            <div class="card-header">
+                                <div class="card-title-wrapper">
+                                    <i data-lucide="heart" class="primary"></i>
+                                    <span class="card-title">Why Your Feedback Matters</span>
+                                </div>
+                            </div>
+                            <div class="sidebar-content">
+                                <div class="feedback-item">
+                                    <strong>Improve Accuracy:</strong> Help us fine-tune 
+                                    our AI model for better diagnostic precision.
+                                </div>
+                                <div class="feedback-item">
+                                    <strong>User Experience:</strong> Guide interface 
+                                    improvements for healthcare professionals.
+                                </div>
+                                <div class="feedback-item">
+                                    <strong>Clinical Relevance:</strong> Ensure our 
+                                    solution meets real-world medical needs.
+                                </div>
+                                <div class="feedback-item">
+                                    <strong>Future Development:</strong> Influence 
+                                    the roadmap for upcoming features and capabilities.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="sidebar-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Need to Discuss Further?</h3>
+                            </div>
+                            <div class="sidebar-content">
+                                <p>For detailed discussions or collaboration opportunities:</p>
+                                <div class="contact-info">
+                                    <div class="contact-item">
+                                        <strong>Research Team:</strong><br>
+                                        <span class="contact-email">research@alzdetect.ai</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <strong>Clinical Partnerships:</strong><br>
+                                        <span class="contact-email">clinical@alzdetect.ai</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Statistics -->
+                        <div class="sidebar-card">
+                            <div class="card-header">
+                                <div class="card-title-wrapper">
+                                    <i data-lucide="star" class="accent"></i>
+                                    <span class="card-title">Community Impact</span>
+                                </div>
+                            </div>
+                            <div class="sidebar-content">
+                                <div class="community-stats">
+                                    <div class="community-stat">
+                                        <span class="stat-label">Feedback Received:</span>
+                                        <span class="stat-value">250+</span>
+                                    </div>
+                                    <div class="community-stat">
+                                        <span class="stat-label">Features Implemented:</span>
+                                        <span class="stat-value">45</span>
+                                    </div>
+                                    <div class="community-stat">
+                                        <span class="stat-label">Average Rating:</span>
+                                        <span class="stat-value">4.2/5 ⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <i data-lucide="brain"></i>
+                        </div>
+                        <span class="footer-logo-text">AlzDetect AI</span>
+                    </div>
+                    <p class="footer-description">
+                        Advancing healthcare through AI-powered early detection of Alzheimer's disease 
+                        from language patterns. Empowering clinicians with cutting-edge technology.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="main.html" class="footer-link">Project Overview</a>
+                        <a href="about.html" class="footer-link">About Research</a>
+                        <a href="feedback.html" class="footer-link">Share Feedback</a>
+                        <a href="contact.html" class="footer-link">Contact Us</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank" rel="noopener" class="social-link">
+                            <i data-lucide="github"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" class="social-link">
+                            <i data-lucide="twitter"></i>
+                        </a>
+                        <a href="mailto:research@alzdetect.ai" class="social-link">
+                            <i data-lucide="mail"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">© 2024 AlzDetect AI Research Project. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#" class="legal-link">Privacy Policy</a>
+                        <a href="#" class="legal-link">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

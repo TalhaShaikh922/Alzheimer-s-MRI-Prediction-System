@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Early Detection of Alzheimer's from Deep Learning</title>
+    <meta name="description" content="Harnessing AI to detect Alzheimer's early from how we speak. Advanced healthcare AI for early diagnosis.">
+    <meta name="author" content="Healthcare AI Research">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Early Detection of Alzheimer's from Language Patterns">
+    <meta property="og:description" content="Harnessing AI to detect Alzheimer's early from how we speak">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container nav-container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon">
+                        <i data-lucide="brain"></i>
+                    </div>
+                    <span class="logo-text">AlzGuardian</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="main.html" class="nav-link">Project</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="feedback.html" class="nav-link">Feedback</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="menu-icon"></i>
+                    <i data-lucide="x" class="close-icon hidden"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav hidden" id="mobileNav">
+                <div class="mobile-nav-links">
+                    <a href="index.html" class="mobile-nav-link active">Home</a>
+                    <a href="main.html" class="mobile-nav-link">Project</a>
+                    <a href="about.html" class="mobile-nav-link">About</a>
+                    <a href="feedback.html" class="mobile-nav-link">Feedback</a>
+                    <a href="contact.html" class="mobile-nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <!-- Background Image -->
+        <div class="hero-bg"></div>
+        
+        <!-- Content -->
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i data-lucide="brain"></i>
+                <span>Healthcare AI Research</span>
+            </div>
+
+            <h1 class="hero-title">
+                <span class="typewriter" id="typewriter">Early Detection of Alzheimer's</span>
+                <br>
+                <span class="hero-highlight">from Deep Learning</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Harnessing AI to detect Alzheimer's early from how we speak.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToMain()">
+                    Get Started
+                    <i data-lucide="arrow-down"></i>
+                </button>
+                
+                <a href="main.html" class="btn btn-outline">
+                    Learn More
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <i data-lucide="arrow-down"></i>
+        </div>
+    </section>
+
+    <!-- Features Preview Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Advanced AI for Early Detection</h2>
+                <p class="section-subtitle">
+                    Our cutting-edge technology analyzes speech patterns to identify 
+                    early signs of cognitive decline with unprecedented accuracy.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon primary">
+                        <i data-lucide="brain"></i>
+                    </div>
+                    <h3 class="feature-title">AI-Powered Analysis</h3>
+                    <p class="feature-description">
+                        Advanced neural networks trained on extensive linguistic datasets 
+                        to detect subtle changes in language patterns.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon accent">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h3 class="feature-title">Rapid Detection</h3>
+                    <p class="feature-description">
+                        Quick analysis of speech samples enables early intervention 
+                        and better patient outcomes through timely diagnosis.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon success">
+                        <i data-lucide="shield"></i>
+                    </div>
+                    <h3 class="feature-title">Clinical Grade</h3>
+                    <p class="feature-description">
+                        Built with healthcare standards in mind, ensuring reliability 
+                        and accuracy for clinical decision-making.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="section-cta">
+                <a href="main.html" class="btn btn-outline btn-lg">
+                    Explore the Technology
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo & Description -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <i data-lucide="brain"></i>
+                        </div>
+                        <span class="footer-logo-text">AlzDetect AI</span>
+                    </div>
+                    <p class="footer-description">
+                        Advancing healthcare through AI-powered early detection of Alzheimer's disease 
+                        from language patterns. Empowering clinicians with cutting-edge technology.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="main.html" class="footer-link">Project Overview</a>
+                        <a href="about.html" class="footer-link">About Research</a>
+                        <a href="feedback.html" class="footer-link">Share Feedback</a>
+                        <a href="contact.html" class="footer-link">Contact Us</a>
+                    </div>
+                </div>
+
+                <!-- Connect -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank" rel="noopener" class="social-link">
+                            <i data-lucide="github"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" class="social-link">
+                            <i data-lucide="twitter"></i>
+                        </a>
+                        <a href="mailto:research@alzdetect.ai" class="social-link">
+                            <i data-lucide="mail"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">
+                        © 2024 AlzDetect AI Research Project. All rights reserved.
+                    </p>
+                    <div class="legal-links">
+                        <a href="#" class="legal-link">Privacy Policy</a>
+                        <a href="#" class="legal-link">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AI-Powered Alzheimer's Detection - Main Project</title>
+    <meta name="description" content="Test our AI model for early Alzheimer's detection through MRI scans.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Custom Styles (your existing stylesheet) -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      /* A few tiny helper styles to ensure upload area looks good even without changing your main stylesheet */
+      .upload-card {
+        padding: 18px;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: 0 6px 20px rgba(16,24,40,0.06);
+        border: 1px solid #e6edf3;
+      }
+      .upload-row { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+      .upload-row input[type="file"] { border-radius:8px; }
+      .btn-primary {
+        background:#2563eb;color:#fff;padding:10px 14px;border-radius:8px;border:none;cursor:pointer;
+      }
+      .result-card { padding:14px;border-radius:8px;border:1px solid #e6edf3;background:#fafafa; }
+      .result-high { color:#fff;padding:12px;border-radius:8px }
+      .result-high.pos { background:#f87171 } /* red */
+      .result-high.neg { background:#4ade80; color:#042e16 } /* green with dark text */
+      .small-muted { color:#6b7280;font-size:0.9rem }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon">
+                        <i data-lucide="brain"></i>
+                    </div>
+                    <span class="logo-text">AlzGuardian</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="main.html" class="nav-link active">Project</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="feedback.html" class="nav-link">Feedback</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="menu-icon"></i>
+                    <i data-lucide="x" class="close-icon hidden"></i>
+                </button>
+            </div>
+
+            <div class="mobile-nav hidden" id="mobileNav">
+                <div class="mobile-nav-links">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="main.html" class="mobile-nav-link active">Project</a>
+                    <a href="about.html" class="mobile-nav-link">About</a>
+                    <a href="feedback.html" class="mobile-nav-link">Feedback</a>
+                    <a href="contact.html" class="mobile-nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">AI-Powered Alzheimer's Detection</h1>
+                <p class="page-subtitle">
+                    Upload MRI scans to our AI system for accurate early detection of Alzheimer's disease.
+                </p>
+            </div>
+        </section>
+
+        <!-- Problem Statement -->
+        <section class="section bg-elevated">
+            <div class="container">
+                <div class="two-column-layout">
+                    <div class="content-column">
+                        <h2 class="section-title left-aligned">The Challenge We're Solving</h2>
+                        <div class="text-content">
+                            <p>
+                                Alzheimer's disease affects over 55 million people worldwide, yet early detection 
+                                remains challenging. Traditional diagnostic methods often identify the disease 
+                                only after significant cognitive decline has occurred.
+                            </p>
+                            <p>
+                                Our AI model leverages MRI scans to detect early markers of Alzheimer's, enabling 
+                                earlier, more accessible screening.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="stats-column">
+                        <div class="stats-card">
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <div class="stat-number primary">55M+</div>
+                                    <div class="stat-label">People affected globally</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number accent">5-7</div>
+                                    <div class="stat-label">Years early detection possible</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number success">85%</div>
+                                    <div class="stat-label">Accuracy in clinical trials</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number warning">2-3x</div>
+                                    <div class="stat-label">Faster than traditional methods</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="section bg-gradient">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">How Our AI Model Works</h2>
+                    <p class="section-subtitle">
+                        Our system processes MRI data using deep neural networks to identify early signs of Alzheimer's.
+                    </p>
+                </div>
+
+                <div class="process-grid">
+                    <!-- Step 1 -->
+                    <div class="process-step">
+                        <div class="process-icon primary">
+                            <i data-lucide="upload"></i>
+                        </div>
+                        <h3 class="process-title">MRI Upload</h3>
+                        <p class="process-description">
+                            Patients upload MRI scans in `.nii` or `.nii.gz` format.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="process-step">
+                        <div class="process-icon accent">
+                            <i data-lucide="brain"></i>
+                        </div>
+                        <h3 class="process-title">AI Analysis</h3>
+                        <p class="process-description">
+                            Our deep learning model processes MRI data and predicts Alzheimer's probability.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="process-step">
+                        <div class="process-icon success">
+                            <i data-lucide="bar-chart-3"></i>
+                        </div>
+                        <h3 class="process-title">Prediction Report</h3>
+                        <p class="process-description">
+                            Generate a comprehensive report including patient details, probability charts, and diagnosis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Test Model Section (Integrated with Streamlit App) -->
+        <section class="section bg-elevated">
+            <div class="container">
+                <div class="test-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Test Our AI Model</h2>
+                        <p class="section-subtitle">
+                            Upload your MRI file and patient details below to get AI-powered predictions.
+                        </p>
+                    </div>
+
+                    <div class="two-column-layout" style="gap:20px;">
+                        <!-- Left: native frontend uploader (calls your FastAPI directly) -->
+                        <div style="flex:1; min-width:320px;">
+                            <div class="upload-card">
+                                <h3 style="margin-top:0">Upload MRI (frontend)</h3>
+                                <p class="small-muted">This form calls your backend API at <code>http://127.0.0.1:8010/predict</code>. Make sure uvicorn is running.</p>
+
+                                <div class="upload-row" style="margin-top:10px;">
+                                    <input id="mriFile" type="file" accept=".nii,.nii.gz" />
+                                    <button id="btnPredict" class="btn-primary">🔍 Run Prediction</button>
+                                </div>
+
+                                <div id="uploadStatus" style="margin-top:12px"></div>
+
+                                <div id="resultCard" style="margin-top:12px;"></div>
+
+                                <div id="rawJson" style="margin-top:12px; display:none;">
+                                    <pre id="rawJsonText" style="max-height:220px; overflow:auto; background:#f3f4f6; padding:8px; border-radius:6px;"></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: embedded Streamlit (optional) -->
+                        <div style="flex:1; min-width:320px;">
+                            <div class="analysis-card" style="padding:0;">
+                                <iframe 
+                                    src="http://localhost:8501/?embed=true" 
+                                    width="100%" 
+                                    height="540px" 
+                                    style="border:none; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.08);">
+                                </iframe>
+                                <p class="small-muted" style="padding:8px 12px; margin:0;">Embedded Streamlit panel (if you prefer GUI). You can also use the native uploader on the left which directly calls the API.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <i data-lucide="brain"></i>
+                        </div>
+                        <span class="footer-logo-text">AlzDetect AI</span>
+                    </div>
+                    <p class="footer-description">
+                        Advancing healthcare through AI-powered early detection of Alzheimer's disease. 
+                        Empowering clinicians with cutting-edge technology.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="main.html" class="footer-link">Project Overview</a>
+                        <a href="about.html" class="footer-link">About Research</a>
+                        <a href="feedback.html" class="footer-link">Share Feedback</a>
+                        <a href="contact.html" class="footer-link">Contact Us</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank" rel="noopener" class="social-link">
+                            <i data-lucide="github"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" class="social-link">
+                            <i data-lucide="twitter"></i>
+                        </a>
+                        <a href="mailto:research@alzdetect.ai" class="social-link">
+                            <i data-lucide="mail"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">© 2024 AlzGuardian AI Research Project. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#" class="legal-link">Privacy Policy</a>
+                        <a href="#" class="legal-link">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inline script: mobile menu + uploader + API integration (no external script.js required) -->
+    <script>
+      // initialize lucide icons
+      if (window.lucide) { lucide.replace(); }
+
+      // mobile menu toggle (keeps your original behavior)
+      function toggleMobileMenu(){
+        const mobile = document.getElementById('mobileNav');
+        if(!mobile) return;
+        mobile.classList.toggle('hidden');
+        const menuIcon = document.querySelector('.menu-icon');
+        const closeIcon = document.querySelector('.close-icon');
+        if(menuIcon) menuIcon.classList.toggle('hidden');
+        if(closeIcon) closeIcon.classList.toggle('hidden');
+      }
+
+      // ---------- Frontend uploader that calls your FastAPI /predict ----------
+      (function(){
+        const API_URL = "http://127.0.0.1:8010"; // <- make sure this matches your uvicorn port
+        const btn = document.getElementById('btnPredict');
+        const inp = document.getElementById('mriFile');
+        const out = document.getElementById('resultCard');
+        const status = document.getElementById('uploadStatus');
+        const rawJson = document.getElementById('rawJson');
+        const rawJsonText = document.getElementById('rawJsonText');
+
+        function renderCard(style, label, confText, probs){
+          if(style === 'inconclusive'){
+            out.innerHTML = `
+              <div class="result-card">
+                <h3 style="margin:0">⚠️ Prediction: Inconclusive</h3>
+                <p class="small-muted">Confidence not high enough to report a reliable percentage. Consider further clinical evaluation.</p>
+                <p><b>Top classes (no % shown):</b><br>• No Alzheimer's<br>• Alzheimer's Detected</p>
+              </div>`;
+            return;
+          }
+          // high_pos or high_neg
+          const colorClass = style === 'high_pos' ? 'pos' : 'neg';
+          const textColor = style === 'high_pos' ? '#fff' : '#052e16';
+          const bg = style === 'high_pos' ? '#f87171' : '#4ade80';
+          out.innerHTML = `
+            <div class="result-high ${colorClass}">
+              <h3 style="margin:0">${label}</h3>
+              <p style="margin:4px 0;font-weight:600">Confidence: <span style="font-size:1.1rem">${confText}</span></p>
+            </div>
+            <div style="margin-top:10px;" class="result-card">
+              <p style="margin:0 0 8px 0"><b>Probabilities</b></p>
+              <p style="margin:0">🟢 No Alzheimer's: ${(probs[0]*100).toFixed(2)}%</p>
+              <p style="margin:0">🔴 Alzheimer's: ${(probs[1]*100).toFixed(2)}%</p>
+            </div>`;
+        }
+
+        async function callPredict(file){
+          status.innerHTML = 'Uploading & processing...';
+          out.innerHTML = '';
+          rawJson.style.display = 'none';
+          rawJsonText.textContent = '';
+
+          const form = new FormData();
+          form.append('file', file);
+
+          try {
+            const res = await fetch(`${API_URL}/predict`, {
+              method: 'POST',
+              body: form
+            });
+            const json = await res.json();
+            // show raw response for debug if you want
+            rawJson.style.display = 'block';
+            rawJsonText.textContent = JSON.stringify(json, null, 2);
+
+            // parse probabilities
+            let probs = null;
+            if (json.class_probs) {
+              probs = json.class_probs;
+            } else if (typeof json.prob_pos !== 'undefined') {
+              probs = [1 - json.prob_pos, json.prob_pos];
+            }
+
+            if (!probs) {
+              status.innerHTML = '<span style="color:#dc2626">Unexpected response — check server logs.</span>';
+              out.innerHTML = `<pre>${JSON.stringify(json, null, 2)}</pre>`;
+              return;
+            }
+
+            // Triple-zone decision
+            const prob_pos = parseFloat(probs[1]);
+            const prob_neg = parseFloat(probs[0]);
+            const HARD_POS = 0.90;
+            const HARD_NEG = 0.10;
+
+            if (prob_pos >= HARD_POS) {
+              renderCard('high_pos', "🚨 Alzheimer's Detected", `${(prob_pos*100).toFixed(0)}%`, probs);
+              status.innerHTML = `<span style="color:#b91c1c">High confidence positive</span>`;
+            } else if (prob_pos <= HARD_NEG) {
+              renderCard('high_neg', "✅ No Alzheimer's", `${(prob_neg*100).toFixed(0)}%`, probs);
+              status.innerHTML = `<span style="color:#15803d">High confidence negative</span>`;
+            } else {
+              renderCard('inconclusive', "Inconclusive", null, probs);
+              status.innerHTML = `<span style="color:#b45309">Inconclusive — probability not high enough (showing no %)</span>`;
+            }
+
+          } catch (err) {
+            console.error(err);
+            status.innerHTML = `<span style="color:#dc2626">Request failed: ${err.message}</span>`;
+            out.innerHTML = `<pre style="color:#dc2626">${err.message}</pre>`;
+          }
+        }
+
+        btn.addEventListener('click', () => {
+          if(!inp.files || inp.files.length === 0){
+            status.innerHTML = '<span style="color:#b91c1c">Please choose a .nii or .nii.gz file first.</span>';
+            return;
+          }
+          const f = inp.files[0];
+          callPredict(f);
+        });
+
+      })();
+    </script>
+</body>
+</html>

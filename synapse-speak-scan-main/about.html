@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our Research - AlzGuardian</title>
+    <meta name="description" content="Learn about our interdisciplinary research team and AI technology for early Alzheimer's detection.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon">
+                        <i data-lucide="brain"></i>
+                    </div>
+                    <span class="logo-text">AlzDetect AI</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="main.html" class="nav-link">Project</a>
+                    <a href="about.html" class="nav-link active">About</a>
+                    <a href="feedback.html" class="nav-link">Feedback</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="menu-icon"></i>
+                    <i data-lucide="x" class="close-icon hidden"></i>
+                </button>
+            </div>
+
+            <div class="mobile-nav hidden" id="mobileNav">
+                <div class="mobile-nav-links">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="main.html" class="mobile-nav-link">Project</a>
+                    <a href="about.html" class="mobile-nav-link active">About</a>
+                    <a href="feedback.html" class="mobile-nav-link">Feedback</a>
+                    <a href="contact.html" class="mobile-nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">About Our Research</h1>
+                <p class="page-subtitle">
+                    A pioneering healthcare AI project focused on early detection of Alzheimer's 
+                    disease through advanced natural language processing and machine learning.
+                </p>
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="section bg-elevated">
+            <div class="container">
+                <div class="two-column-layout">
+                    <div class="content-column">
+                        <h2 class="section-title left-aligned">Research Team & Vision</h2>
+                        <div class="text-content">
+                            <p>
+                                This project represents a collaborative effort between computer science 
+                                researchers, neuroscientists, and clinical professionals to address one 
+                                of the most pressing healthcare challenges of our time.
+                            </p>
+                            <p>
+                                Our interdisciplinary team combines expertise in artificial intelligence, 
+                                computational linguistics, and neurodegenerative diseases to develop 
+                                innovative diagnostic tools.
+                            </p>
+                            <p>
+                                As a student research project, this work demonstrates the potential of 
+                                AI in healthcare while adhering to the highest standards of medical 
+                                research ethics and scientific rigor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info-column">
+                        <div class="info-card">
+                            <div class="info-items">
+                                <div class="info-item">
+                                    <div class="info-icon primary">
+                                        <i data-lucide="graduation-cap"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <h3 class="info-title">Student Research Project</h3>
+                                        <p class="info-description">Graduate-level healthcare AI research</p>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-icon accent">
+                                        <i data-lucide="users"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <h3 class="info-title">Interdisciplinary Team</h3>
+                                        <p class="info-description">AI researchers & medical professionals</p>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-icon success">
+                                        <i data-lucide="award"></i>
+                                    </div>
+                                    <div class="info-content">
+                                        <h3 class="info-title">Clinical Focus</h3>
+                                        <p class="info-description">Real-world healthcare applications</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Stack -->
+        <section class="section bg-gradient">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Technology & Methods</h2>
+                    <p class="section-subtitle">
+                        Our solution leverages cutting-edge AI technologies and established 
+                        medical research methodologies.
+                    </p>
+                </div>
+
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon primary">
+                            <i data-lucide="code"></i>
+                        </div>
+                        <h3 class="tech-title">Python</h3>
+                        <p class="tech-description">Core development language</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon primary">
+                            <i data-lucide="brain"></i>
+                        </div>
+                        <h3 class="tech-title">TensorFlow</h3>
+                        <p class="tech-description">Deep learning framework</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon primary">
+                            <i data-lucide="bar-chart-3"></i>
+                        </div>
+                        <h3 class="tech-title">Deep Learning</h3>
+                        <p class="tech-description">Text analysis and processing</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon primary">
+                            <i data-lucide="cpu"></i>
+                        </div>
+                        <h3 class="tech-title">Nibabel</h3>
+                        <p class="tech-description">Medical Image Handling</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dataset Information -->
+        <section class="section bg-elevated">
+            <div class="container">
+                <div class="two-column-layout reverse">
+                    <div class="dataset-column">
+                        <div class="dataset-card">
+                            <div class="dataset-header">
+                                <div class="dataset-icon accent">
+                                    <i data-lucide="database"></i>
+                                </div>
+                                <div class="dataset-info">
+                                    <h3 class="dataset-title">OASIS Dataset</h3>
+                                    <p class="dataset-subtitle">Open Access Series of Imaging Studies</p>
+                                </div>
+                            </div>
+                            <div class="dataset-stats">
+                                <div class="dataset-stat">
+                                    <span class="stat-label">Total Participants:</span>
+                                    <span class="stat-value">1,000+</span>
+                                </div>
+                                <div class="dataset-stat">
+                                    <span class="stat-label">Language Samples:</span>
+                                    <span class="stat-value">5,000+</span>
+                                </div>
+                                <div class="dataset-stat">
+                                    <span class="stat-label">Data Source:</span>
+                                    <span class="stat-value">Kaggle & Clinical Partners</span>
+                                </div>
+                                <div class="dataset-stat">
+                                    <span class="stat-label">Ethics Review:</span>
+                                    <span class="stat-badge success">Approved</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-column">
+                        <h2 class="section-title left-aligned">Dataset & Training</h2>
+                        <div class="text-content">
+                            <p>
+                                Our model is trained on the prestigious OASIS (Open Access Series of 
+                                Imaging Studies) dataset, which provides longitudinal neuroimaging and 
+                                clinical data from research participants.
+                            </p>
+                            <p>
+                                The dataset includes speech and language samples from both healthy 
+                                individuals and those with various stages of cognitive decline, 
+                                enabling robust model training and validation.
+                            </p>
+                            <p>
+                                All data usage follows strict ethical guidelines and privacy protocols, 
+                                with full institutional review board approval and participant consent.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Timeline -->
+        <section class="section bg-gradient">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Project Timeline & Progress</h2>
+                    <p class="section-subtitle">
+                        Track our research milestones and development progress toward clinical deployment.
+                    </p>
+                </div>
+
+                <div class="timeline-grid">
+                    <!-- Timeline Card -->
+                    <div class="timeline-card">
+                        <div class="card-header">
+                            <div class="card-title-wrapper">
+                                <i data-lucide="calendar"></i>
+                                <span class="card-title">Development Timeline</span>
+                            </div>
+                            <p class="card-description">Progress across major project phases</p>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-item">
+                                <div class="timeline-header">
+                                    <span class="timeline-phase">Research & Planning</span>
+                                    <span class="status-badge complete">Complete</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 100%"></div>
+                                </div>
+                                <div class="progress-text">100% Complete</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-header">
+                                    <span class="timeline-phase">Data Collection</span>
+                                    <span class="status-badge complete">Complete</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 100%"></div>
+                                </div>
+                                <div class="progress-text">100% Complete</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-header">
+                                    <span class="timeline-phase">Model Development</span>
+                                    <span class="status-badge in-progress">In Progress</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                                <div class="progress-text">85% Complete</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-header">
+                                    <span class="timeline-phase">Clinical Testing</span>
+                                    <span class="status-badge in-progress">In Progress</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%"></div>
+                                </div>
+                                <div class="progress-text">60% Complete</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-header">
+                                    <span class="timeline-phase">Validation & Deployment</span>
+                                    <span class="status-badge planned">Planned</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 30%"></div>
+                                </div>
+                                <div class="progress-text">30% Complete</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Achievements Card -->
+                    <div class="achievements-card">
+                        <div class="card-header">
+                            <div class="card-title-wrapper">
+                                <i data-lucide="target"></i>
+                                <span class="card-title">Key Achievements</span>
+                            </div>
+                            <p class="card-description">Research milestones and metrics</p>
+                        </div>
+                        <div class="achievements-grid">
+                            <div class="achievement-item">
+                                <div class="achievement-number primary">10,000+</div>
+                                <div class="achievement-label">Text samples analyzed</div>
+                            </div>
+                            <div class="achievement-item">
+                                <div class="achievement-number primary">85%</div>
+                                <div class="achievement-label">Accuracy achieved</div>
+                            </div>
+                            <div class="achievement-item">
+                                <div class="achievement-number primary">500ms</div>
+                                <div class="achievement-label">Average analysis time</div>
+                            </div>
+                            <div class="achievement-item">
+                                <div class="achievement-number primary">3</div>
+                                <div class="achievement-label">Clinical partners</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Goals & Objectives -->
+        <section class="section bg-elevated">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Goals & Objectives</h2>
+                    <p class="section-subtitle">
+                        Our mission to advance early detection and improve patient outcomes through AI innovation.
+                    </p>
+                </div>
+
+                <div class="goals-grid">
+                    <!-- Primary Goal -->
+                    <div class="goal-card">
+                        <div class="goal-icon primary">
+                            <i data-lucide="target"></i>
+                        </div>
+                        <h3 class="goal-title">Primary Objective</h3>
+                        <p class="goal-description">
+                            Develop a clinically viable AI system capable of detecting early signs 
+                            of Alzheimer's disease from speech patterns with 90%+ accuracy.
+                        </p>
+                    </div>
+
+                    <!-- Secondary Goal -->
+                    <div class="goal-card">
+                        <div class="goal-icon accent">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <h3 class="goal-title">Clinical Impact</h3>
+                        <p class="goal-description">
+                            Enable earlier intervention strategies by identifying at-risk individuals 
+                            3-5 years before traditional diagnostic methods.
+                        </p>
+                    </div>
+
+                    <!-- Future Goal -->
+                    <div class="goal-card">
+                        <div class="goal-icon success">
+                            <i data-lucide="brain"></i>
+                        </div>
+                        <h3 class="goal-title">Future Vision</h3>
+                        <p class="goal-description">
+                            Scale the technology for widespread clinical adoption, making early 
+                            Alzheimer's screening accessible to primary care providers globally.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <i data-lucide="brain"></i>
+                        </div>
+                        <span class="footer-logo-text">AlzGuardian</span>
+                    </div>
+                    <p class="footer-description">
+                        Advancing healthcare through AI-powered early detection of Alzheimer's disease 
+                        from language patterns. Empowering clinicians with cutting-edge technology.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="main.html" class="footer-link">Project Overview</a>
+                        <a href="about.html" class="footer-link">About Research</a>
+                        <a href="feedback.html" class="footer-link">Share Feedback</a>
+                        <a href="contact.html" class="footer-link">Contact Us</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank" rel="noopener" class="social-link">
+                            <i data-lucide="github"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" class="social-link">
+                            <i data-lucide="twitter"></i>
+                        </a>
+                        <a href="mailto:research@alzdetect.ai" class="social-link">
+                            <i data-lucide="mail"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">© 2024 AlzGuardian Research Project. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#" class="legal-link">Privacy Policy</a>
+                        <a href="#" class="legal-link">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

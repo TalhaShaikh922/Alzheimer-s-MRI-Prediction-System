@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - AlzDetect AI</title>
+    <meta name="description" content="Get in touch with our research team for collaboration and inquiries about AI-powered Alzheimer's detection.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container nav-container">
+            <div class="nav-content">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon">
+                        <i data-lucide="brain"></i>
+                    </div>
+                    <span class="logo-text">AlzDetect AI</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="main.html" class="nav-link">Project</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="feedback.html" class="nav-link">Feedback</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="menu-icon"></i>
+                    <i data-lucide="x" class="close-icon hidden"></i>
+                </button>
+            </div>
+
+            <div class="mobile-nav hidden" id="mobileNav">
+                <div class="mobile-nav-links">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="main.html" class="mobile-nav-link">Project</a>
+                    <a href="about.html" class="mobile-nav-link">About</a>
+                    <a href="feedback.html" class="mobile-nav-link">Feedback</a>
+                    <a href="contact.html" class="mobile-nav-link active">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">Get in Touch</h1>
+                <p class="page-subtitle">
+                    Have questions about our research? Interested in collaboration? 
+                    We'd love to hear from you and discuss how our AI technology can 
+                    advance healthcare together.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Methods -->
+        <section class="section bg-elevated">
+            <div class="container">
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon primary">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <h3 class="contact-title">Email Us</h3>
+                        <p class="contact-subtitle">Send us a message</p>
+                        <a href="mailto:research@alzdetect.ai" class="contact-link">
+                            research@alzdetect.ai
+                        </a>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon accent">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <h3 class="contact-title">Research Line</h3>
+                        <p class="contact-subtitle">Mon-Fri 9AM-5PM EST</p>
+                        <a href="tel:+15551234567" class="contact-link">
+                            +1 (555) 123-4567
+                        </a>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon success">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <h3 class="contact-title">Research Center</h3>
+                        <p class="contact-subtitle">University Campus</p>
+                        <span class="contact-link">Boston, MA 02115</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form & Info -->
+        <section class="section bg-gradient">
+            <div class="container">
+                <div class="contact-layout">
+                    <!-- Contact Form -->
+                    <div class="form-column">
+                        <div class="form-card">
+                            <div class="card-header">
+                                <h2 class="card-title">Send Us a Message</h2>
+                                <p class="card-description">
+                                    Fill out the form below and we'll get back to you as soon as possible.
+                                </p>
+                            </div>
+                            <div class="card-content">
+                                <!-- Success Message (Hidden by default) -->
+                                <div id="contactSuccess" class="contact-success hidden">
+                                    <div class="success-icon">
+                                        <i data-lucide="check-circle"></i>
+                                    </div>
+                                    <h3 class="success-title">Message Sent!</h3>
+                                    <p class="success-description">
+                                        Thank you for reaching out. We'll respond within 24 hours.
+                                    </p>
+                                    <button class="btn btn-outline" onclick="resetContactForm()">
+                                        Send Another Message
+                                    </button>
+                                </div>
+
+                                <!-- Contact Form -->
+                                <form id="contactForm" onsubmit="submitContact(event)">
+                                    <!-- Name & Email -->
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="contactName" class="form-label">Name *</label>
+                                            <input 
+                                                type="text" 
+                                                id="contactName" 
+                                                name="name" 
+                                                class="form-input" 
+                                                placeholder="Your full name" 
+                                                required
+                                            >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contactEmail" class="form-label">Email *</label>
+                                            <input 
+                                                type="email" 
+                                                id="contactEmail" 
+                                                name="email" 
+                                                class="form-input" 
+                                                placeholder="your.email@example.com" 
+                                                required
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <!-- Subject -->
+                                    <div class="form-group">
+                                        <label for="subject" class="form-label">Subject</label>
+                                        <input 
+                                            type="text" 
+                                            id="subject" 
+                                            name="subject" 
+                                            class="form-input" 
+                                            placeholder="What is this regarding?"
+                                        >
+                                    </div>
+
+                                    <!-- Message -->
+                                    <div class="form-group">
+                                        <label for="contactMessage" class="form-label">Message *</label>
+                                        <textarea 
+                                            id="contactMessage" 
+                                            name="message" 
+                                            class="form-textarea" 
+                                            placeholder="Tell us about your inquiry, collaboration ideas, or questions..."
+                                            required
+                                        ></textarea>
+                                    </div>
+
+                                    <!-- Submit Button -->
+                                    <button type="submit" class="btn btn-primary btn-full" id="contactSubmitBtn">
+                                        <i data-lucide="send"></i>
+                                        Send Message
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="info-column">
+                        <!-- Research Team -->
+                        <div class="info-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Research Team</h3>
+                                <p class="card-description">
+                                    Connect with our interdisciplinary research team
+                                </p>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-item">
+                                    <div class="info-icon primary">
+                                        <i data-lucide="clock"></i>
+                                    </div>
+                                    <div class="info-text">
+                                        <p class="info-title">Response Time</p>
+                                        <p class="info-description">Usually within 24 hours</p>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-icon accent">
+                                        <i data-lucide="mail"></i>
+                                    </div>
+                                    <div class="info-text">
+                                        <p class="info-title">Office Hours</p>
+                                        <p class="info-description">Monday - Friday, 9:00 AM - 5:00 PM EST</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="info-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Follow Our Research</h3>
+                                <p class="card-description">
+                                    Stay updated with our latest developments and publications
+                                </p>
+                            </div>
+                            <div class="social-grid">
+                                <a href="https://github.com/alzdetect-ai" target="_blank" rel="noopener" class="social-item">
+                                    <i data-lucide="github" class="social-icon github"></i>
+                                    <span class="social-label">GitHub</span>
+                                </a>
+                                <a href="https://twitter.com/alzdetect_ai" target="_blank" rel="noopener" class="social-item">
+                                    <i data-lucide="twitter" class="social-icon twitter"></i>
+                                    <span class="social-label">Twitter</span>
+                                </a>
+                                <a href="https://linkedin.com/company/alzdetect-ai" target="_blank" rel="noopener" class="social-item">
+                                    <i data-lucide="linkedin" class="social-icon linkedin"></i>
+                                    <span class="social-label">LinkedIn</span>
+                                </a>
+                                <a href="https://research.alzdetect.ai" target="_blank" rel="noopener" class="social-item">
+                                    <i data-lucide="globe" class="social-icon primary"></i>
+                                    <span class="social-label">Research Portal</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Collaboration -->
+                        <div class="info-card">
+                            <div class="card-header">
+                                <h3 class="card-title">Collaboration Opportunities</h3>
+                            </div>
+                            <div class="collaboration-content">
+                                <div class="collaboration-item">
+                                    <strong>Clinical Partnerships:</strong> 
+                                    Partner with us for clinical trials and validation studies.
+                                </div>
+                                <div class="collaboration-item">
+                                    <strong>Research Collaboration:</strong> 
+                                    Joint research opportunities with academic institutions.
+                                </div>
+                                <div class="collaboration-item">
+                                    <strong>Technology Integration:</strong> 
+                                    Explore how our AI can enhance your healthcare solutions.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <i data-lucide="brain"></i>
+                        </div>
+                        <span class="footer-logo-text">AlzDetect AI</span>
+                    </div>
+                    <p class="footer-description">
+                        Advancing healthcare through AI-powered early detection of Alzheimer's disease 
+                        from language patterns. Empowering clinicians with cutting-edge technology.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="main.html" class="footer-link">Project Overview</a>
+                        <a href="about.html" class="footer-link">About Research</a>
+                        <a href="feedback.html" class="footer-link">Share Feedback</a>
+                        <a href="contact.html" class="footer-link">Contact Us</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank" rel="noopener" class="social-link">
+                            <i data-lucide="github"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" class="social-link">
+                            <i data-lucide="twitter"></i>
+                        </a>
+                        <a href="mailto:research@alzdetect.ai" class="social-link">
+                            <i data-lucide="mail"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">© 2024 AlzDetect AI Research Project. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#" class="legal-link">Privacy Policy</a>
+                        <a href="#" class="legal-link">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
